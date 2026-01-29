@@ -6,12 +6,12 @@
     <a href="https://github.com/OpenMOSS/MOVA"><img src="https://img.shields.io/badge/Github-Star-yellow?logo=Github&amp"></a>
     <a href="https://huggingface.co/collections/OpenMOSS-Team/mova"><img src="https://img.shields.io/badge/Huggingface-Download-orange?logo=Huggingface&amp"></a>
     <a href="https://mosi.cn/models/mova"><img src="https://img.shields.io/badge/Website-View-blue?logo=Website&amp"></a>
-    <a href="https://github.com/OpenMOSS/MOVA"><img src="https://img.shields.io/badge/Arxiv-PDF-red?logo=Arxiv&amp"></a>
+    <a href="https://github.com/OpenMOSS/MOVA"><img src="https://img.shields.io/badge/Arxiv-Coming soon-red?logo=Arxiv&amp"></a>
 </div>
 <div align="center">
-    <a href="https://github.com/OpenMOSS/MOVA"><img src="https://img.shields.io/badge/Discord-Join-blueviolet?logo=discord&amp"></a>
+    <a href="https://discord.gg/J2BBgVMRVZ"><img src="https://img.shields.io/badge/Discord-Join-blueviolet?logo=discord&amp"></a>
     <a href="https://x.com/Open_MOSS"><img src="https://img.shields.io/badge/X-Follow-blue?logo=x&amp"></a>
-    <a href="https://github.com/OpenMOSS/MOVA"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
+    <a href="https://github.com/user-attachments/assets/ee7e8b70-1440-4012-b2e2-6cb2af42c899"><img src="https://img.shields.io/badge/Wechat-Join-green?logo=wechat&amp"></a>
 </div>
 
 ## MOVA: Towards Scalable and Synchronized Video–Audio Generation
