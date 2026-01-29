@@ -122,13 +122,27 @@ We provide inference benchmarks for generating an **8-second 360p** videos under
 We also support **NPU**s. For more details about NPU training/inference, please refer to **[this document](https://github.com/VoiceAgentGroup/mossVG/blob/open-source-npu/ASCEND_SUPPORTS.md)**.
 
 ## Evaluation
-We evaluate our model through both objective benchmarks and subjective human evaluations. Below are the Elo scores and win rates comparing MOVA to existing open-source models.
+We evaluate our model through both objective benchmarks and subjective human evaluations. 
+
+### Evaluation on Verse-Bench
+
+We provide quantitative comparison of audiovisual generation performance on Verse-Bench. The Audio and AV-Align metrics are evaluated on all subsets; the Lip Sync and Speech metrics are evaluated on Verse-Bench Set3; and ASR Acc is evaluated on a multi-speaker subset proposed by our team. Boldface and underlined numbers indicate the best and second-best results, respectively.
+
+In the lip-sync task, which shows the largest performance gap, MOVA demonstrates a clear advantage. According to the Lip Sync Error metric, with Dual CFG enabled, MOVA-720p achieves an LSE-D score of 7.094 and an LSE-C score of 7.452. Furthermore, MOVA also attains the best performance on the cpCER metric, which reflects speech recognition accuracy and speaker-switching accuracy.
 
 <p align="center">
-    <img src="./assets/elo.png" alt="Elo scores comparison" width="50%"/>
+    <img src="./assets/verse_bench.jpg" alt="verse-bench" width="100%"/>
+</p>
+
+
+### Human Evaluation
+Below are the Elo scores and win rates comparing MOVA to existing open-source models.
+
+<p align="center">
+    <img src="./assets/elo.png" alt="Elo scores comparison" width="60%"/>
 </p>
 <p align="center">
-    <img src="./assets/winrate.png" alt="Win rate comparison" width="80%"/>
+    <img src="./assets/winrate.png" alt="Win rate comparison" width="100%"/>
 </p>
 
 Benchmark results are coming soon.
