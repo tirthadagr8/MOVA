@@ -145,8 +145,6 @@ Below are the Elo scores and win rates comparing MOVA to existing open-source mo
     <img src="./assets/winrate.png" alt="Win rate comparison" width="100%"/>
 </p>
 
-Benchmark results are coming soon.
-
 ## SGLang Integration
 ```
 sglang generate \
