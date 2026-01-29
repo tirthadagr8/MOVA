@@ -67,7 +67,7 @@ hf download OpenMOSS-Team/MOVA-720p --local-dir /path/to/MOVA-720p
 ### Inference
 Generate a video of single person speech:
 ```
-export CP_SIZE=2
+export CP_SIZE=1
 export CKPT_PATH=/path/to/MOVA-720p/
 
 torchrun \
@@ -80,12 +80,13 @@ torchrun \
     --prompt "A man in a blue blazer and glasses speaks in a formal indoor setting, framed by wooden furniture and a filled bookshelf. Quiet room acoustics underscore his measured tone as he delivers his remarks. At one point, he says, \"I would also say that this election in Germany wasn’t surprising.\"" \
     --ref_path "./assets/single_person.jpg" \
     --output_path "./data/samples/single_person.mp4" \
-    --seed 42
+    --seed 42 \
+    --offload cpu
 ```
 
 Generate a video of multi-person speech:
 ```
-export CP_SIZE=2
+export CP_SIZE=1
 export CKPT_PATH=/path/to/MOVA-720p/
 
 torchrun \
@@ -98,7 +99,8 @@ torchrun \
     --prompt "The scene shows a man and a child walking together through a park, surrounded by open greenery and a calm, everyday atmosphere. As they stroll side by side, the man turns his head toward the child and asks with mild curiosity, in English, \"What do you want to do when you grow up?\" The boy answers with clear confidence, saying, \"A bond trader. That's what Don does, and he took me to his office.\" The man lets out a soft chuckle, then responds warmly, \"It's a good profession.\" as their walk continues at an unhurried pace, the conversation settling into a quiet, reflective moment." \
     --ref_path "./assets/multi_person.png" \
     --output_path "./data/samples/multi_person.mp4" \
-    --seed 42
+    --seed 42 \
+    --offload cpu
 ```
 Please refer to the [**inference script**](./scripts/inference_single.py) for more argument usage.
 
