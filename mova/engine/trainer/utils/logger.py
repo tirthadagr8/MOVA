@@ -71,7 +71,7 @@ class WandBLogger(BaseLogger):
                 log_dict[name] = self.wandb.Image(img)
         self.wandb.log(log_dict, step=step)
     
-    def log_audio(self, audios: Dict[str, Any], step: int, sample_rate: int = 44100):
+    def log_audio(self, audios: Dict[str, Any], step: int, sample_rate: int = 48000):
         """Log audio"""
         log_dict = {}
         for name, audio in audios.items():
@@ -119,7 +119,7 @@ class TensorBoardLogger(BaseLogger):
             
             self.writer.add_image(name, img, step)
     
-    def log_audio(self, audios: Dict[str, Any], step: int, sample_rate: int = 44100):
+    def log_audio(self, audios: Dict[str, Any], step: int, sample_rate: int = 48000):
         """Log audio"""
         for name, audio in audios.items():
             self.writer.add_audio(name, audio.cpu(), step, sample_rate=sample_rate)
@@ -146,7 +146,7 @@ class CompositeLogger(BaseLogger):
         for logger in self.loggers:
             logger.log_images(images, step)
     
-    def log_audio(self, audios: Dict[str, Any], step: int, sample_rate: int = 44100):
+    def log_audio(self, audios: Dict[str, Any], step: int, sample_rate: int = 48000):
         for logger in self.loggers:
             if hasattr(logger, 'log_audio'):
                 logger.log_audio(audios, step, sample_rate)

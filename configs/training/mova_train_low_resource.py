@@ -30,7 +30,7 @@ data = dict(
         num_frames=193,  
         height=352,     
         width=640,
-        sample_rate=44100,
+        sample_rate=48000,
         video_fps=24.0,
     ),
     transform=None,

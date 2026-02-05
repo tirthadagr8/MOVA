@@ -30,7 +30,7 @@ class VideoAudioDataset(Dataset):
         num_frames: int = 49,
         height: int = 480,
         width: int = 720,
-        sample_rate: int = 44100,
+        sample_rate: int = 48000,
         video_fps: float = 24.0,
         transform=None,
         audio_transform=None,
