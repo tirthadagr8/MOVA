@@ -148,14 +148,19 @@ Below are the Elo scores and win rates comparing MOVA to existing open-source mo
 </p>
 
 ## SGLang Integration
-```
+
+[SGLang](https://github.com/sgl-project/sglang) provides Day0-support for MOVA. You can use the latest SGLang release and the examples below for high-throughput inference.
+
+### CLI Generation (`sglang generate`)
+
+```bash
 sglang generate \
   --model-path OpenMOSS-Team/MOVA-720p \
   --prompt "A man in a blue blazer and glasses speaks in a formal indoor setting, \
   framed by wooden furniture and a filled bookshelf. \
   Quiet room acoustics underscore his measured tone as he delivers his remarks. \
-  At one point, he says, \"I would also say that this election in Germany wasn’t surprising.\"" \
-  --image-path "https://github.com/OpenMOSS/MOVA/raw/main/assets/single_person.jpg" \
+  At one point, he says, \"I would also believe that this advance in AI recently wasn’t unexpected.\"" \
+  --image-path "./assets/single_person.jpg" \
   --adjust-frames false \
   --num-gpus 8 \
   --ring-degree 2 \
@@ -167,6 +172,42 @@ sglang generate \
   --enable-torch-compile \
   --save-output
 ```
+
+### Online Serving (`sglang serve`)
+
+```bash
+export SG_OUTPUT_DIR=/root/output_mova
+mkdir -p "$SG_OUTPUT_DIR"
+
+sglang serve \
+  --model-path OpenMOSS-Team/MOVA-720p \
+  --host 0.0.0.0 \
+  --port 30002 \
+  --adjust-frames false \
+  --num-gpus 8 \
+  --ring-degree 2 \
+  --ulysses-degree 4 \
+  --tp 1 \
+  --enable-torch-compile \
+  --save-output \
+  --output-dir "$SG_OUTPUT_DIR"
+```
+
+### API Request Example (`/v1/videos`)
+
+```bash
+curl -X POST "http://0.0.0.0:30002/v1/videos" \
+  -F "prompt=A man in a blue blazer and glasses speaks in a formal indoor setting, framed by wooden furniture and a filled bookshelf. Quiet room acoustics underscore his measured tone as he delivers his remarks. At one point, he says, \"I would also believe that this advance in AI recently wasn't unexpected.\"" \
+  -F "input_reference=@./assets/single_person.jpg" \
+  -F "size=640x352" \
+  -F "num_frames=193" \
+  -F "fps=24" \
+  -F "seed=67" \
+  -F "guidance_scale=5.0" \
+  -F "num_inference_steps=25" \
+  -o create_video.json
+```
+
 
 ## Training
 ### LoRA Fine-tuning
