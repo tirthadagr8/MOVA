@@ -36,6 +36,10 @@ try:
 except ModuleNotFoundError:
     FLASH_ATTN_2_AVAILABLE = False
 
+# ---- FORCE DISABLE FLASH-ATTN (Blackwell safety) ----
+FLASH_ATTN_3_AVAILABLE = False
+FLASH_ATTN_2_AVAILABLE = True
+
 try:
     from sageattention import sageattn
     SAGE_ATTN_AVAILABLE = True
